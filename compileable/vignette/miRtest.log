@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.2.13)  26 MAR 2011 11:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.2.13)  26 MAR 2011 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,7 +347,7 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
 Here is how much of TeX's memory you used:
  3398 strings out of 495061
  44121 string characters out of 1182621
- 97248 words of memory out of 3000000
+ 97250 words of memory out of 3000000
  6501 multiletter control sequences out of 15000+50000
  33788 words of font info for 79 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -361,7 +361,7 @@ onts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmsltt10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
 fonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
 tt12.pfb>
-Output written on miRtest.pdf (7 pages, 117897 bytes).
+Output written on miRtest.pdf (7 pages, 117901 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
