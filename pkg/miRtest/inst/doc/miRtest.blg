@@ -1,0 +1,122 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: miRtest.aux
+The style file: natbib.bst
+Database file #1: bibliography.bib.bib
+You're missing a field name---line 349 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 20172960},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 366 of file bibliography.bib.bib
+ :  
+ :  %%note = {{ArticleType:} research-article / Full publication date: 1995 / Copyright © 1995 Royal Statistical Society},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 398 of file bibliography.bib.bib
+ :  
+ :  %%note = {Mathematical Reviews number {(MathSciNet):} {MR1869245;} Zentralblatt {MATH} identifier: 01829051},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 447 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 12519949},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 471 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 19645689},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 539 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 17303618},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 586 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 16381832},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 645 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 11382364},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 660 of file bibliography.bib.bib
+ :  
+ :  %%note = {{ACM} {ID:} 1050641},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 677 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 10963655},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 710 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 16113772},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 742 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 19689821},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 753 of file bibliography.bib.bib
+ :  
+ :  %%note = {{ISBN} 3-900051-07-0}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 790 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 16199517},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 810 of file bibliography.bib.bib
+ :  
+ :  %%note = {{PMID:} 20610611},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "jung_comparison_submitted"
+You've used 7 entries,
+            2378 wiz_defined-function locations,
+            569 strings with 5586 characters,
+and the built_in function-call counts, 3620 in all, are:
+= -- 329
+> -- 240
+< -- 4
++ -- 74
+- -- 72
+* -- 347
+:= -- 645
+add.period$ -- 32
+call.type$ -- 7
+change.case$ -- 43
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 140
+empty$ -- 212
+format.name$ -- 81
+if$ -- 702
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 38
+num.names$ -- 28
+pop$ -- 40
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 102
+stack$ -- 0
+substring$ -- 198
+swap$ -- 33
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 63
+warning$ -- 0
+while$ -- 30
+width$ -- 0
+write$ -- 93
+(There were 15 error messages)
