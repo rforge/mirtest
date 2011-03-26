@@ -44,12 +44,11 @@ mv miRtest_1.0.tar.gz miRtest.tar.gz
 # Build for windows
 R CMD build --binary miRtest
 rm -rf miRtest
-tar -xzf miRtest_1.0_R_x86_64-pc-linux-gnu.tar.gz 
+tar -xzf miRtest_1.0_R*.tar.gz 
 zip -r miRtest.zip miRtest
-mv miRtest_1.0_R_x86_64-pc-linux-gnu.tar.gz miRtest.binary.tar.gz
+mv miRtest_1.0_R*tar.gz miRtest.binary.tar.gz
 rm -rf miRtest
 rm -rf miRtest.Rcheck
 rm *.tar
-tar xzf miRtest.tar.gz
 svn add *
 
