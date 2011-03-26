@@ -5,7 +5,7 @@ Version: 1.0
 Date: **AUTOMATICALLYINCLUDED**
 Author: Stephan Artmann, Klaus Jung, Tim Beissbarth
 Maintainer: Stephan Artmann <stephan.artmann@stud.uni-goettingen.de>
-Depends: globaltest, GlobalAncova, limma, RepeatedHighDim
+Depends: globaltest, GlobalAncova, limma, RepeatedHighDim, corpcor, MASS
 Description: combined miRNA- and mRNA-testing
 License: GPL
 LazyLoad: yes
