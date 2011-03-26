@@ -1,0 +1,221 @@
+\documentclass[12pt]{article}
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm,a4paper,includehead,includefoot]{geometry} 
+\usepackage{natbib}
+\usepackage{amsmath}
+
+%\VignetteIndexEntry{Vignette on miRtest package}
+
+% TITLE PAGE
+\title{miRtest v. 1.0 Package Vignette}
+\author{Stephan Artmann <stephan-artmann@gmx.net>,\\Klaus Jung,\\Tim Bei\ss barth}
+\date{G\"ottingen 2011}
+
+
+% BEGIN OF DOCUMENT
+\usepackage{Sweave}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Introduction}
+High-throughput measurements of gene expression are gaining popularity. So are microRNA analyses. The `miRtest' package \cite[] {detection_artmann_submitted} intends to help researches find regulated expressed miRNAs between two groups.
+
+`miRtest' tries to improve power when testing for differentially regulated miRNAs by incorporation of their regulated gene sets' expression data.
+
+miRNA-wise testing is done with the linear models implemented in the `limma' package \cite[] {smyth_gordon_k_linear_2004}. For gene set testing, different procedures can be chosen from: the self-contained tests `globaltest' \cite[] {goeman_global_2004}, `GlobalAncova' \cite[]{mansmann_testing_2005,hummel_globalancova:_2008}, `RepeatedHighDim' \citep{jung_comparison_submitted,brunner_repeated_2009}, the competitive tests `ROAST' \cite[]{wu_roast:_2010} and `Romer' \cite[]{majewski_opposing_2010} as well as non-rotation enrichment tests.
+\section{Simple Example}
+The main function of `miRtest' is `miR.test'. It requires the user to supply an expression matrix $\boldsymbol{X}$ of miRNAs with miRNAs in its rows and microarray samples in its columns. Additionally, the procedures require an analogous matrix $\boldsymbol{Y}$ of mRNA expression values. Finally, a data.frame $\boldsymbol{A}$ is necessary: it defines which mRNAs are attacked by which miRNA.
+To begin with, we will generate random expression data: miRNA expression matrix $\boldsymbol{X}$, mRNA expression matrix $\boldsymbol{Y}$ and an allocation data.frame $\boldsymbol{A}$.
+\begin{Schunk}
+\begin{Sinput}
+> set.seed(1)
+> X = rnorm(24)
+> dim(X) = c(3, 8)
+> rownames(X) = 1:3
+\end{Sinput}
+\end{Schunk}
+In this synthetic experiment, 8 microarray replicates are present with three miRNAs on each. Additionally, we need a corresponding matrix $\boldsymbol{Y}$ for mRNAs. Here we assume we have 20 mRNAs and 10 microarray replicates:
+\begin{Schunk}
+\begin{Sinput}
+> Y = rnorm(200)
+> dim(Y) = c(20, 10)
+> rownames(Y) = 1:20
+\end{Sinput}
+\end{Schunk}
+Now we need to define what we want to test for. We shall concentrate on two-group testing, i. e. the search for miRNAs differentially expressed between two groups $1$ and $2$. For other designs see Section~\ref{designs}. Let's say both groups are of equal sample size in miRNA and mRNA microarrays:
+
+\begin{Schunk}
+\begin{Sinput}
+> group.miRNA = factor(c(1, 1, 1, 1, 2, 2, 2, 2))
+> group.mRNA = factor(c(1, 1, 1, 1, 1, 2, 2, 2, 2, 2))
+\end{Sinput}
+\end{Schunk}
+
+Next, we need the allocation information. In most databases it is provided as a data.frame $\boldsymbol{A}$, where the first column contains mRNAs and the second miRNAs. Each row of $\boldsymbol{A}$ indicates which mRNA is targeted by which miRNA. Let's say that miRNA $1$ has nine target genes and miRNA $2$ the remaining ones. The gene set of miRNA $3$ will be empty.
+\begin{Schunk}
+\begin{Sinput}
+> library(miRtest)
+> miR = c(rep(1, 9), c(rep(2, 8)))
+> mRNAs = 1:17
+> A = data.frame(mRNAs, miR)
+> A
+\end{Sinput}
+\begin{Soutput}
+   mRNAs miR
+1      1   1
+2      2   1
+3      3   1
+4      4   1
+5      5   1
+6      6   1
+7      7   1
+8      8   1
+9      9   1
+10    10   2
+11    11   2
+12    12   2
+13    13   2
+14    14   2
+15    15   2
+16    16   2
+17    17   2
+\end{Soutput}
+\end{Schunk}
+
+Finally, the function `miR.test' is called which does the testing.
+\begin{Schunk}
+\begin{Sinput}
+> set.seed(1)
+> P = miR.test(X, Y, A, group.miRNA, group.mRNA)
+> P
+\end{Sinput}
+\begin{Soutput}
+    miRtest
+1 0.7208223
+2 0.3157580
+3        NA
+\end{Soutput}
+\end{Schunk}
+Note that for the empty gene set `NA' was returned.
+\pagebreak
+\section{Choice of Gene Set Tests}
+The `gene.set.test' argument in miR.test takes a vector of strings. These are the gene set tests that shall be applied. The default is the `romer' test as it is competitive and compensates for inter-gene correlations. The different gene set tests available are:\\~\\
+\begin{tabular}{lr}
+\hline
+\textbf{Test}&\textbf{Name in miR.test}\\
+\hline
+\\
+\textbf{Self-contained}&\\
+`globaltest' \cite[]{goeman_global_2004}&"globaltest"\\
+`GlobalAncova'&"GA"\\
+\citep{mansmann_testing_2005,hummel_globalancova:_2008}&\\
+`RepeatedHighDim' \citep{brunner_repeated_2009}&"RHD"\\
+\\
+\textbf{Competitive}\\
+Kolm. Smirnov test on gene ranks&"KS"\\
+Wilcoxon test on gene ranks&"W"\\
+Fisher's exact test on gene ranks with 5 \% FDR threshold&"Fisher"\\
+`ROAST' \cite[]{wu_roast:_2010}&"roast"\\
+`romer' \cite[]{majewski_opposing_2010}&"romer"\\
+\hline
+\end{tabular}
+\subsection{Faster Algorithm}
+The specification of other gene set tests in miR.test is therefore rather simple. To obtain faster results than with the default `romer' rotation test, the Wilcoxon two-sample test based on gene ranks is recommended:
+\begin{Schunk}
+\begin{Sinput}
+> P.gsWilcox = miR.test(X, Y, A, group.miRNA, group.mRNA, gene.set.tests = "W")
+> P.gsWilcox
+\end{Sinput}
+\begin{Soutput}
+    miRtest
+1 0.8520745
+2 0.3297708
+3        NA
+\end{Soutput}
+\end{Schunk}
+\pagebreak
+\section{Other Input Formats of Allocation Data}
+To make `miR.test' run faster one can specify an allocation matrix instead of the allocation data.frame. Its columns stand for the miRNAs and its rows for the mRNAs. If a mRNA is a target of a miRNA, the corresponding entry is $1$, else it is $0$. An easy way to generate allocation matrices is the `generate.A' function:
+\begin{Schunk}
+\begin{Sinput}
+> A = generate.A(A, X = X, Y = Y, verbose = FALSE)
+> A
+\end{Sinput}
+\begin{Soutput}
+   1 2 3
+1  1 0 0
+2  1 0 0
+3  1 0 0
+4  1 0 0
+5  1 0 0
+6  1 0 0
+7  1 0 0
+8  1 0 0
+9  1 0 0
+10 0 1 0
+11 0 1 0
+12 0 1 0
+13 0 1 0
+14 0 1 0
+15 0 1 0
+16 0 1 0
+17 0 1 0
+18 0 0 0
+19 0 0 0
+20 0 0 0
+\end{Soutput}
+\end{Schunk}
+To use the allocation matrix, we need to set `allocation.matrix=TRUE' in `miR.test':
+\begin{Schunk}
+\begin{Sinput}
+> set.seed(1)
+> P = miR.test(X, Y, A, group.miRNA, group.mRNA, allocation.matrix = TRUE)
+> P
+\end{Sinput}
+\begin{Soutput}
+    miRtest
+1 0.7208223
+2 0.3157580
+3        NA
+\end{Soutput}
+\end{Schunk}
+
+\pagebreak
+\section{Other Designs than Two-Group Design \label{designs}}
+Primarily, `miRtest' has been designed for two-group comparisons. However, `miRtest' accepts design matrices as used in `limma' \cite[] {smyth_gordon_k_linear_2004}. The only limitation is that `miRtest' takes the second column from `limma's `eBayes' function to calculate final $p$-values. This already allows designs including
+\begin{itemize}
+ \item covariables and
+ \item continuous group/response vectors.
+\end{itemize}
+Other designs will be implemented in future versions. Regard the following example which shows how to use `miRtest' on such designs. First we create the design matrices
+\begin{Schunk}
+\begin{Sinput}
+> group.miRNA = 1:8
+> group.mRNA = 1:10
+> covariable.miRNA = factor(c(1, 2, 3, 4, 1, 2, 3, 4))
+> covariable.mRNA = factor(c(1, 2, 3, 4, 5, 1, 2, 3, 4, 5))
+> library(limma)
+> design.miRNA = model.matrix(~group.miRNA + covariable.miRNA)
+> design.mRNA = model.matrix(~group.mRNA + covariable.mRNA)
+\end{Sinput}
+\end{Schunk}
+which then we use in `miR.test'
+\begin{Schunk}
+\begin{Sinput}
+> P = miR.test(X, Y, A, design.miRNA = design.miRNA, design.mRNA = design.mRNA, 
++     allocation.matrix = TRUE)
+> P
+\end{Sinput}
+\begin{Soutput}
+    miRtest
+1 0.5797948
+2 0.4981197
+3        NA
+\end{Soutput}
+\end{Schunk}
+Note that so far this works only with the competitive gene set tests and `ROAST'.
+
+
+%%bibliography
+\bibliographystyle{natbib}
+\bibliography{bibliography.bib}
+\end{document}
