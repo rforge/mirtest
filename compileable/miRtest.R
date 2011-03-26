@@ -98,6 +98,28 @@ limma.test = function (X,group=NULL,design=NULL) {
 #' Artmann, Stephan and Jung, Klaus and Bleckmann, Annalen and Beissbarth, Tim (submitted).
 #' Detection of simultaneous group effects in microRNA expression and 
 #' related functional gene sets.
+#'
+#' Brunner, E. (2009) Repeated measures under non-sphericity.
+#' Proceedings of the 6th St. Petersburg Workshop on Simulation,
+#' 605-609.
+#' 
+#' Jelle J. Goeman, Sara A. van de Geer, Floor de Kort, Hans C. van
+#' Houwelingen (2004) A global test for groups of genes: testing
+#' association with a clinical outcome. Bioinformatics 20, 93-99.
+#'
+#' Jung, Klaus and Becker, Benjamin and Brunner, Edgar and Beissbarth, Tim (submitted).
+#' Comparison of Global Tests for Functinoal Gene Sets in
+#' Two-Group Designs and Selection of Potentially
+#' Effect-causing Genes.
+#' 
+#' Majewski, IJ, Ritchie, ME, Phipson, B, Corbin, J, Pakusch, M,
+#' Ebert, A, Busslinger, M, Koseki, H, Hu, Y, Smyth, GK, Alexander,
+#' WS, Hilton, DJ, and Blewitt, ME (2010). Opposing roles of polycomb
+#' repressive complexes in hematopoietic stem and progenitor cells.
+#' _Blood_, published online 5 May 2010.
+#'
+#' Mansmann, U. and Meister, R., 2005, Testing differential gene
+#' expression in functional groups, _Methods Inf Med_ 44 (3).
 #' 
 #' Smyth, G. K. (2004). Linear models and empirical Bayes methods for
 #' assessing differential expression in microarray experiments.
@@ -109,18 +131,6 @@ limma.test = function (X,group=NULL,design=NULL) {
 #' complex microarray experiments. _Bioinformatics_, published online
 #' 7 July 2010.
 #' 
-#' Majewski, IJ, Ritchie, ME, Phipson, B, Corbin, J, Pakusch, M,
-#' Ebert, A, Busslinger, M, Koseki, H, Hu, Y, Smyth, GK, Alexander,
-#' WS, Hilton, DJ, and Blewitt, ME (2010). Opposing roles of polycomb
-#' repressive complexes in hematopoietic stem and progenitor cells.
-#' _Blood_, published online 5 May 2010.
-#' 
-#' Jelle J. Goeman, Sara A. van de Geer, Floor de Kort, Hans C. van
-#' Houwelingen (2004) A global test for groups of genes: testing
-#' association with a clinical outcome. Bioinformatics 20, 93-99.
-#' 
-#' Mansmann, U. and Meister, R., 2005, Testing differential gene
-#' expression in functional groups, _Methods Inf Med_ 44 (3).
 #' @author Stephan Artmann
 gs.test = function(A,X=NULL,Y,group=NULL,tests,permutation=FALSE,nrot=1000,design=NULL,allocation.matrix=FALSE,verbose=FALSE) {
  # Load required libraries

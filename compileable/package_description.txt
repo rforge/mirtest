@@ -7,7 +7,7 @@ Package Description: Two-group combined miRNA- and mRNA- expression testing.
 \description{
 Looking for differential expression in miRNA-data can have low power. Taking their respective mRNA-gene sets on the other hand
 can lead to too liberal results. In Artmann et al. we proposed a method to combine both information sources and generate p-values
-that can detect either miRNA-, or target gene set expression differences. 
+that can detect either miRNA- and target gene set expression differences. 
 }
 \details{
 \tabular{ll}{
@@ -18,16 +18,15 @@ Date: \tab **AUTOMATICALLYINCLUDED**\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
-First, a priori-defined gene sets 
-need to be supplied. In the end, you need an allocation matrix A. To generate one
-see the function "generate.A" in this package.
-Then you can start the test with the "miR.test" function, which needs the expression matrix X
+For a detailed help check vignette("miRtest")
+
+You can start the test with the "miR.test" function, which needs the expression matrix X
 of miRNAs, the expression matrix Y of mRNAs and the allocation matrix.
 }
 \author{
-Stephan Artmann <stephan-artmann@gmx.net>
-Klaus Jung
-Timm Beissbarth
+Stephan Artmann <stephan-artmann@gmx.net>,
+Klaus Jung,
+Tim Beissbarth
 
 Maintainer: Stephan Artmann <stephan-artmann@gmx.net>
 }

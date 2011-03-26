@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.19)  26 MAR 2011 01:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.2.13)  26 MAR 2011 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -47,14 +47,14 @@ Package ifvtex Info: VTeX not detected.
 \Gm@odd@mp=\dimen105
 \Gm@even@mp=\dimen106
 \Gm@dimlist=\toks15
-
-(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg)) (./natbib.sty
+) (./natbib.sty
 Package: natbib 2000/07/24 7.0a (PWD)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count90
-) (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip45
 
@@ -306,7 +306,7 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
 \scratchdimen=\dimen118
@@ -345,23 +345,23 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
  (./miRtest.bbl
 [6]) [7] (./miRtest.aux) ) 
 Here is how much of TeX's memory you used:
- 3401 strings out of 495061
- 44268 string characters out of 1182620
- 97263 words of memory out of 3000000
+ 3398 strings out of 495061
+ 44121 string characters out of 1182621
+ 97248 words of memory out of 3000000
  6501 multiletter control sequences out of 15000+50000
  33788 words of font info for 79 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  35i,6n,21p,584b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/steph/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-tcrm1200.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmsltt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt
-12.pfb>
-Output written on miRtest.pdf (7 pages, 117875 bytes).
+ </home/stephan/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/tcrm1200.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsltt10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+tt12.pfb>
+Output written on miRtest.pdf (7 pages, 117897 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
