@@ -1,5 +1,5 @@
-rm -r miRtest
-rm -r miRtest.Rcheck
+rm -rf miRtest
+rm -rf miRtest.Rcheck
 rm  miRtest_1.0.tar.gz
 rm miRtest.tar.gz
 cp miRtest.R miRtest.bckp
@@ -43,12 +43,13 @@ mv miRtest_1.0.tar.gz miRtest.tar.gz
 
 # Build for windows
 R CMD build --binary miRtest
-rm -r miRtest
+rm -rf miRtest
 tar -xzf miRtest_1.0_R_x86_64-pc-linux-gnu.tar.gz 
 zip -r miRtest.zip miRtest
 mv miRtest_1.0_R_x86_64-pc-linux-gnu.tar.gz miRtest.binary.tar.gz
-rm -r miRtest
-rm -r miRtest.Rcheck
+rm -rf miRtest
+rm -rf miRtest.Rcheck
 rm *.tar
 tar xzf miRtest.tar.gz
+svn add *
 
