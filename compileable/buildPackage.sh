@@ -1,18 +1,17 @@
-cd /home/steph/ams-server/ma/miRtest
 rm -r miRtest
 rm -r miRtest.Rcheck
 rm  miRtest_1.0.tar.gz
 rm miRtest.tar.gz
 cp miRtest.R miRtest.bckp
 
-./replace2.pl vignette/miRtest.Rnw mainExample.txt '<<.*>>=' '@'
+perl replace2.pl vignette/miRtest.Rnw mainExample.txt '<<.*>>=' '@'
 sed s/#\'//g mainExample.txt > mainExample2.txt;
 DATE=`date '+%Y-%m-%d'`
 sed "s/\*\*AUTOMATICALLYINCLUDED\*\*/$DATE/g" package_description.txt  > del.txt
-./replace.pl del.txt pack.descr "##MAINEXAMPLE" mainExample2.txt 
+perl replace.pl del.txt pack.descr "##MAINEXAMPLE" mainExample2.txt 
 rm mainExample2.txt
 rm del.txt
-./replace.pl miRtest.bckp miRtest.R "##MAINEXAMPLE" mainExample.txt 
+perl replace.pl miRtest.bckp miRtest.R "##MAINEXAMPLE" mainExample.txt 
 
 # Build sceleton
 R --no-save --no-restore < buildPackage.R
@@ -30,7 +29,7 @@ cd vignette
 ./compile.sh miRtest
 cd ..
 cp vignette/miRtest* miRtest/inst/doc
-./replace.pl vignette/miRtest.Rnw miRtest/inst/doc/miRtest.Rnw "%%bibliography" vignette/miRtest.bbl --last-line
+perl replace.pl vignette/miRtest.Rnw miRtest/inst/doc/miRtest.Rnw "%%bibliography" vignette/miRtest.bbl --last-line
 
 echo '\end{document}' | cat miRtest/inst/doc/miRtest.Rnw - > miRtest/inst/doc/miRtest.tmp
 mv miRtest/inst/doc/miRtest.tmp miRtest/inst/doc/miRtest.Rnw
