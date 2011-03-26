@@ -50,4 +50,5 @@ mv miRtest_1.0_R_x86_64-pc-linux-gnu.tar.gz miRtest.binary.tar.gz
 rm -r miRtest
 rm -r miRtest.Rcheck
 rm *.tar
+tar xzf miRtest.tar.gz
 
