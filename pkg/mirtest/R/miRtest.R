@@ -233,13 +233,13 @@ gs.test = function(A,X=NULL,Y,group=NULL,tests,permutation=FALSE,nrot=1000,desig
   }
   if ("globaltest" %in% tests) {
    if (length(which(index & (M<0))) > 2) {
-    gt.low = gt(group,Y[index & M<0,],permutation=gt.perm)@result[,1];
+    gt.low = gt(group,Y[index & M<0,],permutations=gt.perm)@result[,1];
    } else {
     gt.low = NA;
    }
    P.l [j,match("globaltest",tests)] = gt.low;
    if (length(which(index & (M>0))) > 2) {
-    gt.high = gt(group,Y[index & M>0,],permutation=gt.perm)@result[,1];
+    gt.high = gt(group,Y[index & M>0,],permutations=gt.perm)@result[,1];
    } else {
     gt.high = NA;
    }
@@ -301,7 +301,7 @@ gs.test = function(A,X=NULL,Y,group=NULL,tests,permutation=FALSE,nrot=1000,desig
  }
  if ("roast" %in% tests) {
    if(verbose) print("Starting ROAST procedure...")
-   Roast = mroast(L.roast,Y,design,nrot=nrot,adjust="none")$P.Value;
+   Roast = mroast(L.roast,Y,design,nrot=nrot,adjust.method="none")$P.Value;
    P.l[,match("roast",tests)] = Roast[,3];
    P.h[,match("roast",tests)] = Roast[,2];
    if(verbose) print("Finished ROAST procedure...")
