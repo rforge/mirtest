@@ -31,9 +31,9 @@ Tim Beissbarth
 Maintainer: Stephan Artmann <stephan-artmann@gmx.net>
 }
 \references{
-Artmann, Stephan and Jung, Klaus and Bleckmann, Annalen and Beissbarth, Tim (submitted).
+Artmann, Stephan and Jung, Klaus and Bleckmann, Annalen and Beissbarth, Tim (2012).
 Detection of simultaneous group effects in microRNA expression and 
-related functional gene sets.
+related functional gene sets. Plos ONE, PMID: 22723856.
 
 Brunner, E. (2009) Repeated measures under non-sphericity.
 Proceedings of the 6th St. Petersburg Workshop on Simulation,
@@ -43,10 +43,10 @@ Jelle J. Goeman, Sara A. van de Geer, Floor de Kort, Hans C. van
 Houwelingen (2004) A global test for groups of genes: testing
 association with a clinical outcome. Bioinformatics 20, 93-99.
 
-Jung, Klaus and Becker, Benjamin and Brunner, Edgar and Beissbarth, Tim (submitted).
+Jung, Klaus and Becker, Benjamin and Brunner, Edgar and Beissbarth, Tim (2011).
 Comparison of Global Tests for Functinoal Gene Sets in
 Two-Group Designs and Selection of Potentially
-Effect-causing Genes.
+Effect-causing Genes. Bioinformatics, 27: 1377-1383.
 
 Majewski, IJ, Ritchie, ME, Phipson, B, Corbin, J, Pakusch, M,
 Ebert, A, Busslinger, M, Koseki, H, Hu, Y, Smyth, GK, Alexander,
