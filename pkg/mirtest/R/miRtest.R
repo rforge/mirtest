@@ -14,6 +14,7 @@ contingency.table = function (gene.set,p.val,sign=0.05) {
  cont.tab; 
 }
 
+
 #' Turn a data.frame indicating gene sets into the allocation matrix. 
 #' @param df data.frame with mRNAs in its first and miRNAs in its second column.
 #' @param X Expression matrix of miRNAs whose row names will be used to generate the list of miRNAs.
