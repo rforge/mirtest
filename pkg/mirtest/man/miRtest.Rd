@@ -25,11 +25,11 @@ You can start the test with the "miR.test" function, which needs the expression 
 of miRNAs, the expression matrix Y of mRNAs and the allocation matrix.
 }
 \author{
-Stephan Artmann <stephan-artmann@gmx.net>,
+Stephan Artmann <stephanartmann@gmx.net>,
 Klaus Jung,
 Tim Beissbarth
 
-Maintainer: Stephan Artmann <stephan-artmann@gmx.net>
+Maintainer: Stephan Artmann <stephanartmann@gmx.net>
 }
 \references{
 Artmann, Stephan and Jung, Klaus and Bleckmann, Annalen and Beissbarth, Tim (2012).
