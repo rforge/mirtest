@@ -13,3 +13,4 @@ Depends: corpcor, MASS
 Imports: globaltest, GlobalAncova, limma, RepeatedHighDim
 Collate: 'miRtest.R'
 Packaged: 2011-07-03 12:26:52 UTC; stephan
+
