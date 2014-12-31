@@ -1,7 +1,7 @@
 Package: miRtest
 Maintainer: Stephan Artmann <stephanartmann@gmx.net>
 License: GPL
-Title: combined miRNA- and mRNA-testing
+Title: Combined miRNA- and mRNA-Testing
 URL: http://www.ncbi.nlm.nih.gov/pubmed/22723856
 Type: Package
 LazyLoad: yes
